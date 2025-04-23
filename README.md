@@ -1,14 +1,18 @@
 # Scrap-Tagco
 
 ### Doc
+
 [TagCo Api](https://commandersact.github.io/api_doc/#operation/TmsWebTagsdestroy)
 
 ### First step
+
 ```bash
 touch env.json
 ```
 
 ### Second step
+
+Insert in the env.json
 ```
 {
     "token": "Insert your token",
@@ -18,7 +22,8 @@ touch env.json
 ```
 
 ### Third step
+
 ```bash
-python TagCoCrawler.py 
+python Main.py 
 ```
 

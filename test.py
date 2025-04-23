@@ -3,7 +3,10 @@ from utils.GetContainers import get_containers
 from utils.ConvertToCsv import convert_to_csv
 from utils.ReduceTags import reduce_tags
 
-containers = get_containers()
-tags = get_tags()
-new_tags = reduce_tags(tags, containers)
-convert_to_csv(new_tags)
+def test () -> None:
+    containers = get_containers()
+    tags = get_tags()
+    new_tags = reduce_tags(tags, containers)
+    convert_to_csv(new_tags)
+    
+test()

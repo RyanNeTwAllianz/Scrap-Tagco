@@ -22,7 +22,6 @@ def simplify(tag: TagType, container: ContainerType) -> CondensedTagType:
 def reduce_tags(tags: List[TagType] ,containers: List[ContainerType]) -> List[CondensedTagType]:
     new_tags = []
     for tag in tags:
-        print('Tag', tag)
         container_id = tag.get('attributes').get('container_id')
         container =  next((d for d in containers if d['id'] == str(container_id)), None)
         if container:
