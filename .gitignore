@@ -1,3 +1,11 @@
 #Git Ignore
 
+
+/utils/__pychache__/*
+__pycache__/
+*.py[cod]
 env.json
+
+#Ignore files
+Tags*
+/Tags*

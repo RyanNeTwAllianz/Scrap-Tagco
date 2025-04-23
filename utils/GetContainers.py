@@ -1,13 +1,14 @@
-from typing import Dict, List
+from typing import List
 from utils.Get import get
+from utils.types import ContainerType
 
-def get_containers() -> List[Dict[str, str]]:
+def get_containers() -> List[ContainerType]:
     containers = []
     res = get('sources')
     if res.status_code == 200:
         response = res.json()
         for data in response['data']:
-            if  "x -" not in data['attributes']['label']:
+            if  not data['attributes']['label'].startswith('x -'):
                 containers.append(
                     {
                         'id': data['id'], 
@@ -15,5 +16,4 @@ def get_containers() -> List[Dict[str, str]]:
                     })
         return containers
     else:
-        print(f'Erreur {res.status_code} : {res.text}')
-        return None
+        raise Exception(f'Error {res.status_code} : {res.text}')
