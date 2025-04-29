@@ -1,4 +1,5 @@
 from utils.types import TagType, CondensedTagType, ContainerType
+from utils.GuessToolFromContainerName import guess_tool_from_container_name
 from typing import List
 import re
 
@@ -9,14 +10,20 @@ def simplify(tag: TagType, container: ContainerType) -> CondensedTagType:
     container_number_value = int(container_number.group(1)) if container_number else 0
     
     return {
-        'id': tag.get('id'),
-        'container_id': attrs.get('container_id'),
         'container_number': container_number_value,
         'container_name': container['name'],
+        'tools': guess_tool_from_container_name(attrs.get('name')),
+        'comment': '',
         'tag_name': attrs.get('name'),
+        'event_type': '',
+        'tag_type': '',
+        'dupe_param': '',
+        'dupe_x1': '',
+        'disabled': 'Disactivated' if attrs.get('disabled') else 'Activated',
         'order': attrs.get('order'),
-        'disabled': attrs.get('disabled'),
         'script': attrs.get('tag_code'),
+        'tag_id': tag.get('id'),
+        'container_id': attrs.get('container_id')
     }
 
 def reduce_tags(tags: List[TagType] ,containers: List[ContainerType]) -> List[CondensedTagType]:
@@ -28,5 +35,6 @@ def reduce_tags(tags: List[TagType] ,containers: List[ContainerType]) -> List[Co
             new_tags.append(simplify(tag, container))
     
     new_tags.sort(key=lambda obj: obj['order'])
+    new_tags.sort(key=lambda obj: obj['container_name'])
     new_tags.sort(key=lambda obj: obj['container_number'])
     return new_tags

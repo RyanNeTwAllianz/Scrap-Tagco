@@ -3,7 +3,7 @@ from typing import Literal, List, TypedDict
 
 @dataclass
 class CondensedTagType():
-    id: str
+    tag_id: str
     container_id: str
     container_number: int
     container_name: str
@@ -11,6 +11,12 @@ class CondensedTagType():
     order: int
     disabled: bool
     script: str
+    tools: str
+    dupe_x1: str
+    dupe_param: str
+    comment: str
+    event_type: str
+    tag_type: str
     
 @dataclass
 class ContainerType():
