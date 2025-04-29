@@ -6,6 +6,7 @@ def get_tags () -> List[TagType]:
     res = get('tms/web-tags')
     if res.status_code == 200:
         response = res.json()
+        print('Tags crawled')
         return response['data']
     else:
         raise Exception(f'Error {res.status_code} : {res.text}')

@@ -14,6 +14,7 @@ def get_containers() -> List[ContainerType]:
                         'id': data['id'], 
                         'name': data['attributes']['label']
                     })
+        print('Containers crawled')
         return containers
     else:
         raise Exception(f'Error {res.status_code} : {res.text}')

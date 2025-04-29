@@ -33,3 +33,4 @@ class ToolEnum(Enum):
     HUMAN = 'HUMAN'
     TVTY = 'TVTY'
     RAKUTEN = 'RAKUTEN'
+    
