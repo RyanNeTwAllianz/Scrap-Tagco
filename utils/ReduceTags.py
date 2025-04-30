@@ -4,6 +4,7 @@ from utils.GuessEventType import guess_event_type
 from utils.GuessTagType import guess_tag_type
 from utils.GuessDupeX1 import guess_dupe_x1
 from utils.GuessX1Time import guess_x1_time
+from utils.GetContainerNumberFromContainerName import get_container_number_from_container_name
 from typing import List
 import re
 
@@ -14,7 +15,7 @@ def simplify(tag: TagType, container: ContainerType) -> CondensedTagType:
     container_number_value = int(container_number.group(1)) if container_number else 0
     
     return {
-        'container_number': container_number_value,
+        'container_number': get_container_number_from_container_name(container),
         'container_name': container['name'],
         'tools': guess_tool_from_container_name(attrs.get('name')),
         'comment': '',
@@ -34,7 +35,10 @@ def reduce_tags(tags: List[TagType] ,containers: List[ContainerType]) -> List[Co
     new_tags = []
     for tag in tags:
         container_id = tag.get('attributes').get('container_id')
-        container =  next((d for d in containers if d['id'] == str(container_id)), None)
+        container = None
+        for c in containers:
+            if  str(get_container_number_from_container_name(c)) == str(container_id):
+                container = c
         if container:
             new_tags.append(simplify(tag, container))
     

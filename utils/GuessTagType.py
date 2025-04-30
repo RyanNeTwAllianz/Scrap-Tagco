@@ -6,12 +6,12 @@ def guess_tag_type(script: str) -> str:
         return "empty"
 
     js_code = match.group(1).strip()
+    tag_type = []
     
     if 'tlz.px' in js_code:
-        other_code = re.sub(r'tlz\.px.*?;', '', js_code)
-        if other_code.strip():
-            return "js | px"
-        else:
-            return "px"
+        tag_type.append('px')
     
-    return "js"
+    if '.js' in js_code or 'tlz.js' in js_code:
+        tag_type.append('js')
+        
+    return ' | '.join(tag_type)
