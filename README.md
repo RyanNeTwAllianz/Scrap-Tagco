@@ -4,10 +4,20 @@
 
 [TagCo Api](https://commandersact.github.io/api_doc/#operation/TmsWebTagsdestroy)
 
+## Steps
+
+Git clone the project and cd into it.
+
 ### First step
 
 ```bash
 touch env.json
+```
+
+&&
+
+```bash
+mkdir exports
 ```
 
 ### Second step
