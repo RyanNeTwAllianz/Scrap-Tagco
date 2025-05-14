@@ -5,6 +5,9 @@ from utils.ReadJson import read_json
 from utils.ReduceTags import reduce_tags
 from utils.ConvertToCsv import convert_to_csv
 from utils.GuessX1Time import guess_x1_time
+from utils.GuessTagType import guess_tag_type
+from utils.CreateFolder import create_folder
+from utils.DupeKey import dupe_key
 
 def test () -> None:
     #containers = read_json('containers')
@@ -12,7 +15,8 @@ def test () -> None:
     #x = reduce_tags(tags, containers)
     #convert_to_csv(x)
     #print(x)
-    x = guess_x1_time("""<script type="text/javascript"> 
+    
+    x = dupe_key('adrenalead', """<script type="text/javascript"> 
 //ga optout
 tlz._disableGA = function() {
     window['ga-disable-UA-33617477-8'] = !0;
@@ -48,6 +52,7 @@ tlz.x1('listen saveOptin consent update', function(){
   });
 });
 //init exempted
+_nAdztr.push(["setTransactionId", tlz.sf sdfsd + sf sdf s.replace('/sfdsdfs')])
 tlz.x1('init exempt - create ga tracker', function(){
   tlz.gt('config', tlz._alzExemptedGaID, { 
         groups: 'ga_exempt', 
@@ -60,6 +65,8 @@ tlz.x1('init exempt - create ga tracker', function(){
         cookie_flags: tlz._cookieSameSite ? 'SameSite=None; Secure':undefined,
         custom_map: {
           dimension20 : 'linkTitle_20',
+          orderid: 'fdfdfdfd'.replace('/sdfdf'), //Hello
+          orderid: 'fdfdfdfd'.replace('/sdfdf'),
           dimension21 : 'linkDestination_21',
           dimension113 : 'containerInfos_113',
           dimension128 : 'isSupervision_128',

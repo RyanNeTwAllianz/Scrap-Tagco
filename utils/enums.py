@@ -18,7 +18,8 @@ class ToolEnum(Enum):
     OCEAD = 'OCEAD'
     ORANGE_XANDR = 'ORANGE XANDR'
     OUTBRAIN = 'OUTBRAIN'
-    ZAMANTA = 'ZAMANTA'
+    ZEMANTA = 'ZEMANTA'
+    ZAMANTA = 'ZEMANTA'
     POWERSPACE = 'POWERSPACE'
     SNAPCHAT = 'SNAPCHAT'
     STACKADAPT = 'STACKADAPT'
@@ -33,4 +34,3 @@ class ToolEnum(Enum):
     HUMAN = 'HUMAN'
     TVTY = 'TVTY'
     RAKUTEN = 'RAKUTEN'
-    

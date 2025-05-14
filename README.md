@@ -14,12 +14,6 @@ Git clone the project and cd into it.
 touch env.json
 ```
 
-&&
-
-```bash
-mkdir exports
-```
-
 ### Second step
 
 Insert in the env.json
