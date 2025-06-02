@@ -1,7 +1,7 @@
 import os
 import sys
 
-def create_folder():
+def create_folder() -> str:
     root_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
     exports_path = os.path.join(root_dir, 'exports')
     

@@ -7,7 +7,7 @@ class GuessX1TimeTest (unittest.TestCase):
     
     def test_guess_x1_time_matches (self):
         for d in data:
-            self.assertEqual(guess_x1_time(d['script']), d['GuessX1TimeTest'])
+            self.assertEqual(guess_x1_time(d['script']), d['GuessX1TimeResult'])
             
             
     def test_guess_x1_time_no_matches (self):

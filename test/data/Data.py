@@ -30,7 +30,7 @@ data = [
         'dupeKeyResult': 'id: tc_vars.conversion_file_id | id: tc_vars.conversion_file_id',
         'GuessDupeX1Result': "'listen lead cs' | 'lead cs'+tlz._page.product+' '+tlz._form.risk",
         'GuessTagTypeResult': 'js',
-        'GuessX1TimeTest': 'session | page'
+        'GuessX1TimeResult': 'session | page'
     },
     {
         'tool': 'cm',
@@ -113,6 +113,6 @@ data = [
         'dupeKeyResult': 'session_id: tlz._session.sessionId + tlz._form.risk',
         'GuessDupeX1Result': "'listener lead cm'",
         'GuessTagTypeResult': "js",
-        'GuessX1TimeTest': 'page'
+        'GuessX1TimeResult': 'page'
     }
 ]
