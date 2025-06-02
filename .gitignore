@@ -1,15 +1,14 @@
 #Git Ignore
 
 
-/utils/__pychache__/*
-/test/__pychache__/*
 __pycache__/
 *.py[cod]
 env.json
 tags.json
 containers.json
-venv
 
 #Ignore files
-Tags*
-/Tags*
+/utils/__pychache__/*
+/test/__pychache__/*
+venv
+exports
