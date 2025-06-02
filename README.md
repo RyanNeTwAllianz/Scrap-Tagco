@@ -31,3 +31,8 @@ Insert in the env.json
 python Main.py 
 ```
 
+###  Run tests
+
+```bash
+python -m unittest discover -s test
+```

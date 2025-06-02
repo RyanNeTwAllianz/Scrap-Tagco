@@ -1,6 +1,6 @@
 from utils.enums import ToolEnum
 
-def guess_tool_from_container_name(tag_name: str) -> str :
+def guess_tool_from_tag_name(tag_name: str) -> str :
     tools = tag_name.split('-')[0]
     tools = [tools] if ',' not in tools else tools.split(',')
         

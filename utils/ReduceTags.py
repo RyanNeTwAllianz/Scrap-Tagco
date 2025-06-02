@@ -1,5 +1,5 @@
 from utils.types import TagType, CondensedTagType, ContainerType
-from utils.GuessToolFromContainerName import guess_tool_from_container_name
+from utils.GuessToolFromTagName import guess_tool_from_tag_name
 from utils.GuessEventType import guess_event_type
 from utils.GuessTagType import guess_tag_type
 from utils.GuessDupeX1 import guess_dupe_x1
@@ -12,7 +12,7 @@ from utils.DupeKey import dupe_key
 def simplify(tag: TagType, container: ContainerType) -> CondensedTagType:
     attrs = tag.get('attributes', {})
     script = attrs.get('tag_code')
-    tool = guess_tool_from_container_name(attrs.get('name'))
+    tool = guess_tool_from_tag_name(attrs.get('name'))
     
     return {
         'container_number': get_container_number_from_container_name(container),
