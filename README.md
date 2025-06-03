@@ -36,3 +36,6 @@ python Main.py
 ```bash
 python -m unittest discover -s test
 ```
+
+For more information about unittest : 
+[UnitTest Doc](https://docs.python.org/3/library/unittest.html)

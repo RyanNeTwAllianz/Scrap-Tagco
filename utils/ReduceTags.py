@@ -8,7 +8,7 @@ from utils.GetContainerNumberFromContainerName import get_container_number_from_
 from typing import List
 from utils.DupeKey import dupe_key
 
-#
+#Retourne la totalité des valeurs en anglais qui composent le tableau dans l'excel final => Correspond a une ligne dans le tableau
 def simplify(tag: TagType, container: ContainerType) -> CondensedTagType:
     attrs = tag.get('attributes', {})
     script = attrs.get('tag_code')
